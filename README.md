@@ -1,5 +1,5 @@
-Pasos para hacer uso del proyecto
-
+# Pasos para hacer uso del proyecto
+```bash
 Crea un entorno virtual para el proyecto
     asigna un nombre a tu entorno
         python3 -m venv entorno
