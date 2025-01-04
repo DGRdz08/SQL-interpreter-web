@@ -18,7 +18,9 @@ Credenciales de administrador
     contraseña:     adminpassword
 
 Registrate, sigue el tutorial y usa
+# Estructura del Proyecto
 
+```plaintext
 mi_proyecto/
 ├── app.py
 ├── config.py
