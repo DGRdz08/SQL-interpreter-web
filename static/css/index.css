@@ -1,0 +1,163 @@
+    /* Ventanas Modales */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+  
+      .modal.active {
+        display: flex;
+      }
+  
+      .modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+  
+      .modal-content h2 {
+        margin-bottom: 20px;
+      }
+  
+      .modal-content form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+  
+      .modal-content input[type="text"],
+      .modal-content input[type="email"],
+      .modal-content input[type="password"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+  
+      .modal-content button {
+        padding: 10px;
+        background-color: #1E88E5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+  
+      .modal-content button:hover {
+        background-color: #1565C0;
+      }
+  
+      .modal-close {
+        margin-top: 10px;
+        text-decoration: underline;
+        cursor: pointer;
+        color: #1E88E5;
+      }
+  
+  
+      /* Modal Compenzar */
+      .modal-tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+  
+      .modal-tab {
+        flex: 1;
+        cursor: pointer;
+        padding: 10px 15px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+      }
+  
+      .modal-tab.active {
+        background-color: #1E88E5;
+        color: #fff;
+        border-color: #1E88E5;
+      }
+  
+      .modal-section {
+        display: none;
+      }
+  
+      .modal-section.active {
+        display: block;
+      }
+      /* Sección principal */
+      .hero {
+        flex: 1;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Evita que se salga contenido extra */
+      }
+  
+      /* Fondo desenfocado */
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/static/images/bg.png'); /* Reemplaza con tu imagen */
+        background-size: cover;
+        background-position: center;
+        filter: blur(8px); /* Desenfoque en el fondo */
+        z-index: 1;
+      }
+  
+      /* Contenido visible */
+      .hero-content {
+        position: relative;
+        text-align: center;
+        z-index: 2; /* Por encima del fondo */
+        color: #fff; /* Texto blanco */
+      }
+  
+      .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Mejora la legibilidad */
+      }
+  
+      .hero-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Mejora la legibilidad */
+      }
+  
+      .hero-content button {
+        padding: 10px 20px;
+        background-color: #1E88E5; /* Azul principal */
+        color: #fff; /* Blanco */
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+      }
+  
+      .hero-content button:hover {
+        background-color: #1565C0; /* Azul oscuro hover */
+        transform: scale(1.05);
+      } 
+  

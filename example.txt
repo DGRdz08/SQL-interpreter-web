@@ -1,0 +1,23 @@
+--Ejemplos con SELECT
+SELECT * FROM employees; (Funciona bien)
+SELECT name, age FROM employees; (Funciona bien)
+SELECT * FROM employees WHERE age > 30;
+SELECT * FROM employees WHERE name = 'Emily';
+SELECT * FROM employees WHERE hire_date > '2020-01-01'; 
+SELECT name, performance_score FROM employees WHERE performance_score > 8;
+SELECT name, department, salary FROM employees WHERE (department = 'IT' OR department = 'Finance') AND salary > 55000;
+
+--Ejemplos con INSERT
+INSERT INTO employees VALUES (80, 'Sergio', 43, 'HR', 67500, '2020-12-20', 4);
+
+--Ejemplos con UPDATE
+UPDATE employees SET salary = 59350 WHERE department = 'IT';  (No funciona)
+UPDATE employees SET performance_score = 10 WHERE name = 'John'; (No funciona)
+UPDATE employees SET performance_score = 10 WHERE name = 'John';
+UPDATE employees SET salary = 60000 WHERE hire_date > '2020-01-01';
+
+--Ejemplos con DELETE
+DELETE FROM employees WHERE department = 'Sales';
+DELETE FROM employees;
+DELETE FROM employees WHERE id = 8;
+DELETE FROM employees WHERE age < 25 OR hire_date <= '2018-01-01';

@@ -1,0 +1,136 @@
+
+
+  /* ===========================
+   MODO OSCURO
+   =========================== */
+   body.dark-mode {
+    background-color: #1c1c1c; 
+    color: #ddd; 
+  }
+  
+  /* Para el nav y footer */
+  body.dark-mode nav {
+    background-color: #333 !important;
+  }
+  body.dark-mode footer {
+    background-color: #333 !important;
+  }
+  body.dark-mode footer span {
+    color: #66ccff; /* Un azul más claro, a tu gusto */
+  }
+  
+  /* Cambiar textos del nav */
+  body.dark-mode nav ul li a {
+    color: #ddd;
+  }
+  body.dark-mode nav ul li a:hover {
+    color: #66ccff;
+  }
+  
+  /* Para las cards y contenedores blancos */
+  body.dark-mode .card {
+    background-color: #2a2a2a;
+    color: #ddd;
+    border: 1px solid #444;
+  }
+  
+  /* Botones en modo oscuro */
+  body.dark-mode button, 
+  body.dark-mode .nav-buttons a {
+    background-color: #444;
+    color: #fff;
+  }
+  body.dark-mode button:hover,
+  body.dark-mode .nav-buttons a:hover {
+    background-color: #66ccff;
+    color: #000;
+  }
+  
+  /* Para la tabla */
+  body.dark-mode table th {
+    background-color: #444;
+    color: #ddd;
+  }
+  body.dark-mode table td {
+    background-color: #2a2a2a;
+    color: #ddd;
+    border-color: #444;
+  }
+  
+  /* Para la drop-area */
+  body.dark-mode .drop-area {
+    background-color: #2a2a2a;
+    border-color: #555;
+  }
+  body.dark-mode .drop-area:hover {
+    background-color: #444;
+  }
+  
+  /* ===========================
+            MEDIA QUERIES 
+     =========================== */
+  /* Tablet vertical (≈768px) y móviles grandes */
+  @media (max-width: 768px) {
+    nav {
+      padding: 10px 20px;
+    }
+    nav .logo-menu {
+      gap: 10px; 
+    }
+    nav ul {
+      display: none; /* Ocultar el menú */
+    }
+  
+    /* Ajustar contenedor */
+    .container {
+      margin: 80px auto 20px;
+      padding: 10px;
+    }
+  
+    /* Ajustar .query-input -> una debajo de otra */
+    .query-input {
+      flex-direction: column;
+    }
+    .query-input button {
+      width: 100%;
+    }
+  
+    /* Ajustar .results-history -> una debajo de otra */
+    .results-history {
+      flex-direction: column;
+    }
+  }
+  
+  /* Móviles más pequeños (≈480px) */
+  @media (max-width: 480px) {
+    /* Ajusta tamaños de fuente, paddings, etc. */
+    nav .logo-menu {
+      gap: 5px;
+    }
+    nav ul li {
+      margin: 0 5px;
+    }
+    .user-profile {
+      margin-right: 10px;
+    }
+    nav img.logo {
+      height: 40px;
+      width: 60px;
+    }
+  
+    .container {
+      padding: 10px;
+      margin: 70px auto 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    /* Botón para togglear dark-mode se puede ajustar tamaño */
+    #toggleDarkMode {
+      font-size: 0.9rem;
+      padding: 8px 10px;
+    }
+  }
+  

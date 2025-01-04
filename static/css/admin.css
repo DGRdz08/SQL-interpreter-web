@@ -1,0 +1,22 @@
+
+    /* Encabezados de tabla con fondo azul */
+    .table-highlight thead th {
+        background-color: #1E88E5;
+        color: #fff;
+      }
+  
+      /* main-container */
+      .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        margin-top: 100px; /* Para evitar solapamiento con el nav */
+      }
+  
+      .main-container h1 {
+        margin-bottom: 20px;
+        color: #1E88E5;
+      }
+  

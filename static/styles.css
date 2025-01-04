@@ -1,0 +1,219 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;   
+    background-color: #fff; /* Fondo blanco */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6; /* Espaciado de línea estándar */
+  }
+  
+  /* Estilos para el nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  nav .logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+  }
+  
+  nav img.logo {
+    height: 55px;
+    width: 80px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #1E88E5;
+  }
+  
+  .nav-buttons a {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .nav-buttons a:hover {
+    background-color: #1E88E5;
+    color: #fff;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-profile img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  
+
+  /* Contenedores principales */
+  .container {
+    max-width: 1200px;
+    margin: 100px auto 20px; /* Ajusta espacio del contenedor respecto al nav */
+    padding: 20px;
+    flex: 1; /* Para que el contenedor principal ocupe todo el espacio disponible */
+  }
+  
+  /* Elementos generales */
+  h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  p {
+    color: #666; /* Un tono más claro para el texto */
+    margin-bottom: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #1E88E5; /* Azul para enlaces */
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #1565C0; /* Azul más oscuro en hover */
+  }
+  
+  /* Botones generales */
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  }
+  
+  /* Tablas generales */
+  table {
+    width: 90%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  
+  table th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+  
+      /* ==== MENU PERFIL (TOP RIGHT) ==== */
+      .user-profile {
+        position: relative; /* necesario para posicionar el menú desplegable */
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 20px; /* Ajusta según tu diseño */
+      }
+      
+      .profile-name {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        user-select: none; /* Evita que se seleccione el texto en el doble clic */
+      }
+  
+      /* Menú desplegable */
+      .dropdown-menu {
+        display: none;             /* oculto por defecto */
+        position: absolute;
+        top: 40px;                 /* se coloca debajo del nombre */
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px;
+        z-index: 1000;
+        min-width: 100px;          /* ancho mínimo para el menú */
+      }
+      
+      /* Botón de Salir dentro del menú */
+      .dropdown-menu button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: #333;
+      }
+  
+      .dropdown-menu button svg {
+        width: 16px;
+        height: 16px;
+      }
+  
+      /* Opcional: cambiar estilo del botón Salir en hover */
+      .dropdown-menu button:hover {
+        color: #1E88E5;
+      }
+  
+  /* Estilos para el footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+    width: 100%;
+  }
+  
+  footer span {
+    font-weight: bold;
+    color: #1E88E5;
+  }

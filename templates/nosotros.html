@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Diego-DB</title>
+  <link rel="icon" href="/static/images/favicon.ico">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/css/darkMode.css">
+  <link rel="stylesheet" href="/static/css/nosotros.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="logo-menu">
+      <img class="logo" src="/static/images/logo.png" alt="Logo">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/conoce">Conoce</a></li>
+        {% if session.user_type == 'client' %}
+        <li><a href="/consulta">Consulta</a></li>
+        {% endif %}
+        <li><a href="/nosotros">Nosotros</a></li>
+      </ul>
+    </div>
+    <div class="user-profile">
+      <!-- Ícono y nombre de usuario juntos -->
+      <div class="profile-name" id="profileButton">
+        <!-- Ícono del usuario -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+             class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" 
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 
+                   0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 
+                   11.226 4.805 10 8 10s4.757 1.225 
+                   5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+        <!-- Nombre del usuario -->
+        <span>{{ session.user_name }}</span>
+      </div>
+
+      <!-- Menú desplegable que aparece al hacer clic -->
+      <div class="dropdown-menu" id="dropdownMenu">
+        <!-- Botón Salir con ícono -->
+        <button id="logoutBtn" onclick="logout()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" 
+               height="16" fill="currentColor" class="bi bi-box-arrow-right" 
+               viewBox="0 0 16 16">
+            <path fill-rule="evenodd" 
+                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 
+                     0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 
+                     0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 
+                     1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 
+                     0 3.5v9A1.5 1.5 0 0 0 1.5 
+                     14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 
+                     0 0 0-1 0z"/>
+            <path fill-rule="evenodd"
+                  d="M15.854 8.354a.5.5 0 0 0
+                     0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 
+                     7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 
+                     2.146a.5.5 0 0 0 .708.708z"/>
+          </svg>
+          <span>Salir</span>
+        </button>
+        <button id="toggleDarkMode" style="margin-right: 20px;">
+          Modo Oscuro
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
+    <!-- Encabezado principal -->
+    <div class="main-header">
+      <div class="project-logo">
+        <img src="/static/images/logo.png" alt="Logo de Diego-DB">
+      </div>
+      <div class="project-info">
+        <h1>¿Quiénes Somos?</h1>
+        <p>
+          En <strong>Diego DB</strong>, transformamos la manera en que las empresas y analistas interactúan con los datos. 
+          Somos una plataforma innovadora basada en la nube, diseñada para ofrecer una administración avanzada de bases de 
+          datos con un enfoque en la eficiencia, seguridad y facilidad de uso. Nuestra misión es empoderar a las empresas 
+          modernas para que tomen decisiones informadas, rápidas y basadas en datos precisos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sección de características -->
+    <div class="features-section">
+      <div class="feature-card">
+        <h2>Misión</h2>
+        <p>
+          Nuestra misión es proporcionar soluciones innovadoras en la gestión de bases de datos,
+          asegurando eficiencia, confiabilidad y facilidad de uso.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h2>Visión</h2>
+        <p>Ser líderes globales en tecnología de bases de datos, marcando tendencias en innovación y excelencia.</p>
+      </div>
+      <div class="feature-card">
+        <h2>Valores</h2>
+        <p>Integridad, innovación, compromiso con la calidad y pasión por la tecnología.</p>
+      </div>
+    </div>
+
+    <!-- Formulario de suscripción -->
+    <div class="subscribe-section">
+      <h2>Suscríbete y recibe nuestras últimas actualizaciones</h2>
+      <p>Ingresa tu correo electrónico para estar al tanto de novedades y mejoras.</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Ingresa tu correo" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal (ventana emergente) -->
+  <div id="modal" class="modal-background">
+    <div class="modal-content">
+      Registrado con éxito ¡Muchas gracias!
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2024 by <span>DGRdz08</span>.
+  </footer>
+
+  <script src="/static/scripts/nosotros.js"></script>
+  <script src="/static/script.js"></script>
+  <script src="/static/scripts/darkMode.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego-DB</title>
+  <link rel="icon" href="/static/images/favicon.ico">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/css/darkMode.css">
+  <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="logo-menu">
+      <img class="logo" src="/static/images/logo.png" alt="Logo">
+      <ul>
+        <li><h1>Panel de Administración</h1></li>
+      </ul>
+    </div>
+    <div class="nav-buttons">
+      <a href="#" class="admin" onclick="logout()">Cerrar sesión</a>
+    </div>
+  </nav>
+
+  <!-- Tabla de trazabilidad de usuarios -->
+  <div class="main-container">
+    <h1>Usuarios Registrados</h1>
+    <table class="table-highlight">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>user_type</th>
+          <th>user_id</th>
+          <th>query_text</th>
+          <th>url</th>
+          <th>ip</th>
+          <th>browser</th>
+          <th>so</th>
+          <th>timestamp</th>
+        </tr>
+      </thead>
+      <tbody id="logTable">
+        <!-- Se llena dinámicamente con JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2024 by <span>DGRdz08</span>.
+  </footer>
+
+  <script src="/static/scripts/querylogs.js"></script>
+  <script src="/static/script.js"></script>
+  <script src="/static/scripts/auth_user.js"></script>
+</body>
+</html>

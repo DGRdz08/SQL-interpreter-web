@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego-DB</title>
+  <link rel="icon" href="/static/images/favicon.ico">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="logo-menu">
+      <img class="logo" src="/static/images/logo.png" alt="Logo">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/conoce">Conoce</a></li>
+        {% if session.user_type == 'client' %}
+        <li><a href="/consulta">Consulta</a></li>
+        {% endif %}
+        <li><a href="/nosotros">Nosotros</a></li>
+      </ul>
+    </div>
+    <div class="nav-buttons">
+      <a href="#" class="admin" onclick="openModal('adminModal')">¿Eres administrador?</a>
+    </div>
+  </nav>
+
+  <!-- Modal para iniciar sesión como administrador -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content">
+      <h2>Iniciar Sesión como Administrador</h2>
+      <form onsubmit="loginUser(event, 'admin')">
+        <input id="admin-username" type="text" placeholder="Usuario" required>
+        <input id="admin-password" type="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <div class="modal-close" onclick="closeModal('adminModal')">Cerrar</div>
+    </div>
+  </div>
+
+  <!-- Sección principal -->
+  <div class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <h1>De consultas simples a soluciones brillantes</h1>
+      <h2>Empresa innovadora en bases de datos que ofrece administración eficiente y pruebas funcionales, <br> conectando datos con decisiones estratégicas.</h2>
+      <button onclick="openModal('modal')">Comenzar</button>
+    </div>
+  </div>
+
+  <!-- Modal para registro e inicio de sesión -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>¡Por favor regístrate o identifícate!</h2>
+      <div class="modal-tabs">
+        <div id="tab-login" class="modal-tab active" onclick="showSection('login')">Iniciar sesión</div>
+        <div id="tab-register" class="modal-tab" onclick="showSection('register')">Registrarse</div>
+      </div>
+      <div id="login" class="modal-section active">
+        <form onsubmit="loginUser(event, 'client')">
+          <input id="client-username" type="text" placeholder="Usuario" required>
+          <input id="client-password" type="password" placeholder="Contraseña" required>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </div>
+      <div id="register" class="modal-section">
+        <form onsubmit="registerUser(event)">
+          <input id="register-username" type="text" placeholder="Nombre completo" required>
+          <input id="register-email" type="email" placeholder="Correo electrónico" required>
+          <input id="register-password" type="password" placeholder="Contraseña" required>
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal')">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2024 by <span>DGRdz08</span>.
+  </footer>
+
+  <script src="/static/scripts/index.js"></script>
+  <script src="/static/scripts/darkMode.js"></script>
+  <script src="/static/scripts/auth_user.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

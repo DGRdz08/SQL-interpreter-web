@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego-DB</title>
+  <link rel="icon" href="/static/images/favicon.ico">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/css/darkMode.css">
+  <link rel="stylesheet" href="/static/css/conoce.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="logo-menu">
+      <img class="logo" src="logo.png" alt="">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/consulta">Conoce</a></li>
+        {% if session.user_type == 'client' %}
+        <li><a href="/consulta">Consulta</a></li>
+        {% endif %}
+        <li><a href="/nosotros">Nosotros</a></li>
+      </ul>
+    </div>
+    <div class="user-profile">
+      <!-- Ícono y nombre de usuario juntos -->
+      <div class="profile-name" id="profileButton">
+        <!-- Ícono del usuario -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+             class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" 
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 
+                   0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 
+                   11.226 4.805 10 8 10s4.757 1.225 
+                   5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+        <!-- Nombre del usuario -->
+        <span>{{ session.user_name }}</span>
+      </div>
+
+      <!-- Menú desplegable que aparece al hacer clic -->
+      <div class="dropdown-menu" id="dropdownMenu">
+        <!-- Botón Salir con ícono -->
+        <button id="logoutBtn" onclick="logout()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" 
+               height="16" fill="currentColor" class="bi bi-box-arrow-right" 
+               viewBox="0 0 16 16">
+            <path fill-rule="evenodd" 
+                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 
+                     0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 
+                     0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 
+                     1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 
+                     0 3.5v9A1.5 1.5 0 0 0 1.5 
+                     14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 
+                     0 0 0-1 0z"/>
+            <path fill-rule="evenodd"
+                  d="M15.854 8.354a.5.5 0 0 0
+                     0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 
+                     7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 
+                     2.146a.5.5 0 0 0 .708.708z"/>
+          </svg>
+          <span>Salir</span>
+        </button>
+        <button id="toggleDarkMode" style="margin-right: 20px;">
+          Modo Oscuro
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Carrusel -->
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="prevSlide()">&#8249;</button>
+      <div class="carousel-inner" id="carouselInner">
+        <div class="carousel-item">Contenido del Carrusel 1</div>
+        <div class="carousel-item">Contenido del Carrusel 2</div>
+        <div class="carousel-item">Contenido del Carrusel 3</div>
+      </div>
+      <button class="carousel-btn next" onclick="nextSlide()">&#8250;</button>
+    </div>
+    <div class="carousel-indicators">
+      <div class="indicator active" onclick="goToSlide(0)"></div>
+      <div class="indicator" onclick="goToSlide(1)"></div>
+      <div class="indicator" onclick="goToSlide(2)"></div>
+    </div>
+
+<!-- Grid de apartados -->
+<div class="grid">
+  <div class="card">
+    <h3>SELECT</h3>
+    <img src="/static/images/select.png" alt="">
+    <p>Recupera datos específicos de la base de datos.</p>
+  </div>
+  <div class="card">
+    <h3>INSERT</h3>
+    <img src="/static/images/insert.png" alt="">
+    <p>Agrega nuevos registros a la base de datos.</p>
+  </div>
+  <div class="card">
+    <h3>UPDATE</h3>
+    <img src="/static/images/update.png" alt="">
+    <p>Modifica registros existentes en la base de datos.</p>
+  </div>
+  <div class="card">
+    <h3>DELETE</h3>
+    <img src="/static/images/delete.png" alt="">
+    <p>Elimina registros de la base de datos.</p>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright 2024 by <span>DGRdz08</span>.
+  </footer>
+<script src="/static/script.js"></script>
+<script src="/static/scripts/darkMode.js"></script>
+<script src="/static/scripts/auth_user.js"></script>
+<script src="/static/scripts/carrusell.js"></script>
+</body>
+</html>
